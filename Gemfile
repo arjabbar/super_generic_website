@@ -6,15 +6,12 @@ gem 'rails',            github: "rails/rails", branch: "4-1-stable"
 gem 'sqlite3'
 # Use latest 2.1 version of sprockets-rails
 gem 'sprockets-rails',  github: "rails/sprockets-rails", branch: "2-1-stable"
-
-# Use SCSS for stylesheets
-gem 'sass-rails',       github: "rails/sass-rails"
-
+gem 'capistrano', '~> 3.2.0'
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails',     github: "rails/coffee-rails"
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',     platforms: :ruby
 
@@ -30,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',             group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',           group: :development
 gem 'devise'
+gem 'rspec-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
