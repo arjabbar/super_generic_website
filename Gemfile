@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem 'sprockets-rails',  github: "rails/sprockets-rails", branch: "2-1-stable"
 gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-rbenv', '~> 2.0'
+gem 'sass-rails', github: 'rails/sass-rails', branch: '4-0-stable'
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
