@@ -1,0 +1,15 @@
+port: 3000
+pid: tmp/pids/thin.pid
+timeout: 30
+wait: 30
+log: log/thin.log
+max_conns: 1024
+require: []
+max_persistent_conns: 512
+servers: 4
+threaded: true
+no-epoll: true
+daemonize: true
+socket: tmp/sockets/thin.sock
+chdir: /home/padrino/my-padrino-app
+tag: development-super-generic-website
