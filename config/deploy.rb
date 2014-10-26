@@ -1,14 +1,19 @@
 # config valid only for Capistrano 3.1
+require 'capistrano/rbenv'
 lock '3.2.1'
 
 set :application, 'super_generic_website'
-set :repo_url, 'git@example.com:me/my_repo.git'
-
+set :repo_url, 'https://github.com/arjabbar/super_generic_website.git'
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.1.3'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
+set :deploy_to, '/var/www/super_generic_website'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -29,7 +34,7 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -49,9 +54,13 @@ namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do 
+        execute :bundle, 'install'
+        execute :rbenv, 'rehash'
+        execute :rake, 'assets:clean'
+        execute :rake, 'db:create'
+        execute :rake, 'db:migrate'
+      end
     end
   end
 
