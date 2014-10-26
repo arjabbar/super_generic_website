@@ -57,9 +57,9 @@ namespace :deploy do
       within release_path do 
         execute :bundle, 'install'
         execute :rbenv, 'rehash'
-        execute :rake, 'assets:clean'
         execute :rake, 'db:create'
         execute :rake, 'db:migrate'
+        execute :rake, 'assets:clean'
       end
     end
   end
