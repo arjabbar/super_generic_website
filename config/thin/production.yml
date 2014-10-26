@@ -11,5 +11,6 @@ servers: 4
 threaded: true
 no-epoll: true
 daemonize: true
+chdir: /var/www/production_super_generic_website
 socket: tmp/sockets/thin.sock
 tag: production-super-generic-website

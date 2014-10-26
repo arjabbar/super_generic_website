@@ -11,5 +11,4 @@ threaded: true
 no-epoll: true
 daemonize: true
 socket: tmp/sockets/thin.sock
-chdir: /home/padrino/my-padrino-app
 tag: development-super-generic-website

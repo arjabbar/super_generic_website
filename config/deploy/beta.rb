@@ -17,6 +17,7 @@ role :db,  %w{super-generic-website.tk}
 # used to set extended properties on the server.
 
 server 'super-generic-website.tk', user: 'ec2-user', roles: %w{web app}
+set :deploy_to, '/var/www/beta_super_generic_website'
 
 
 # Custom SSH Options
