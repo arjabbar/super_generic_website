@@ -5,9 +5,9 @@
 # property set.  Don't declare `role :all`, it's a meta role.
 require 'capistrano/rbenv'
 
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+role :app, %w{super-generic-website.tk}
+role :web, %w{super-generic-website.tk}
+role :db,  %w{super-generic-website.tk}
 
 
 # Extended Server Syntax
@@ -16,8 +16,9 @@ role :db,  %w{deploy@example.com}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
+server 'super-generic-website.tk', user: 'ec2-user', roles: %w{web app db}
+set :deploy_to, '/var/www/production_super_generic_website'
 
 # Custom SSH Options
 # ==================

@@ -1,6 +1,4 @@
 port: 3000
-user: ec2-user
-group: ec2-user
 pid: tmp/pids/thin.pid
 timeout: 30
 wait: 30
@@ -11,8 +9,7 @@ environment: beta
 max_persistent_conns: 512
 servers: 1
 threaded: true
-no-epoll: true
 daemonize: true
 chdir: /var/www/beta_super_generic_website/current
 socket: tmp/sockets/thin.sock
-tag: beta-super-generic-website
+tag: beta_super_generic_website

@@ -16,7 +16,7 @@ role :db,  %w{super-generic-website.tk}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'super-generic-website.tk', user: 'ec2-user', roles: %w{web app}
+server 'super-generic-website.tk', user: 'ec2-user', roles: %w{web app db}
 set :deploy_to, '/var/www/beta_super_generic_website'
 
 
@@ -27,7 +27,6 @@ set :deploy_to, '/var/www/beta_super_generic_website'
 #
 # Global options
 # --------------
-p ENV['DEPLOY_KEY']
 
  set :ssh_options, {
    keys: %w(~/Downloads/LinuxKeyPair.pem),
