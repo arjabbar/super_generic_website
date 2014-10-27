@@ -1,4 +1,5 @@
 port: 3000
+user: 'ec2-user'
 pid: tmp/pids/thin.pid
 timeout: 30
 wait: 30
@@ -7,7 +8,7 @@ max_conns: 1024
 require: []
 environment: beta
 max_persistent_conns: 512
-servers: 4
+servers: 1
 threaded: true
 no-epoll: true
 daemonize: true
