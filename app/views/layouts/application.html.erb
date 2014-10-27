@@ -21,10 +21,12 @@
   </head>
 
   <body>
-
     <%= yield %>
 
     
     <%= javascript_include_tag "application" %>
+    <footer>
+      <div><%= Rails.env %></div>
+    </footer>
   </body>
 </html>
