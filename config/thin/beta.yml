@@ -1,4 +1,4 @@
-port: 3001
+port: 3000
 user: ec2-user
 group: ec2-user
 pid: tmp/pids/thin.pid
@@ -14,5 +14,5 @@ threaded: true
 no-epoll: true
 daemonize: true
 chdir: /var/www/beta_super_generic_website/current
-socket: ./tmp/sockets/thin.sock
+socket: tmp/sockets/thin.sock
 tag: beta-super-generic-website

@@ -9,6 +9,7 @@ set :rbenv_ruby, '2.1.3'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
+set :use_sudo, false
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
@@ -50,10 +51,11 @@ namespace :deploy do
 
   after :publishing, :restart
 
-  after :restart, :clear_cache do
+  before :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do 
+        execute :mkdir, 'tmp/sockets'
         execute :bundle, 'install'
         execute :rbenv, 'rehash'
         execute :rake, 'db:create'
