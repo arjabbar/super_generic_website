@@ -9,5 +9,5 @@ max_persistent_conns: 512
 servers: 1
 threaded: true
 daemonize: true
-chdir: /var/www/production_super_generic_website
-tag: production-super-generic-website
+chdir: /var/www/production_super_generic_website/current
+tag: production_super_generic_website
