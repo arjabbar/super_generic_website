@@ -1,6 +1,7 @@
 port: 3001
 timeout: 30
 wait: 30
+pid: tmp/pids/thin.pid
 log: log/thin.log
 max_conns: 1024
 require: []
