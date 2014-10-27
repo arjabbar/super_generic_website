@@ -25,13 +25,10 @@ set :deploy_to, '/var/www/production_super_generic_website'
 # You may pass any option but keep in mind that net/ssh understands a
 # limited set of options, consult[net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start).
 #
-# Global options
-# --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+ set :ssh_options, {
+   keys: %w(~/Downloads/LinuxKeyPair.pem),
+   forward_agent: false
+ }
 #
 # And/or per server (overrides global)
 # ------------------------------------
