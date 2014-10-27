@@ -29,7 +29,7 @@ set :deploy_to, '/var/www/beta_super_generic_website'
 # --------------
 
  set :ssh_options, {
-   keys: %w(~/Downloads/LinuxKeyPair.pem),
+   keys: Array(ENV["SSH_KEY"] || "~/Downloads/LinuxKeyPair.pem"),
    forward_agent: false
  }
 #

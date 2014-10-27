@@ -26,7 +26,7 @@ set :deploy_to, '/var/www/production_super_generic_website'
 # limited set of options, consult[net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start).
 #
  set :ssh_options, {
-   keys: %w(~/Downloads/LinuxKeyPair.pem),
+   keys: Array(ENV["SSH_KEY"] || "~/Downloads/LinuxKeyPair.pem"),
    forward_agent: false
  }
 #
