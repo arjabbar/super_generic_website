@@ -11,5 +11,5 @@ servers: 1
 threaded: true
 daemonize: true
 chdir: /var/www/beta_super_generic_website/current
-socket: tmp/sockets/thin.sock
+socket: /tmp/thin.sock
 tag: beta_super_generic_website
