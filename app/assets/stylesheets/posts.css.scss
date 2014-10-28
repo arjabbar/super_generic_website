@@ -1,3 +1,47 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  width: 100%;
+  margin: 20px auto;
+
+  th {
+    border-bottom: solid 1px grey;
+  }
+
+  td {
+    padding: 15px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.button {
+  text-decoration: none;
+  background-color: #1C6DC7;
+  color: white !important;
+  height: 35px;
+  width: 80px;
+  display: block;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  float: left;
+
+  &.show-button {
+    background-color: #00AF69;
+  }
+
+  &.edit-button {
+    background-color: #B28B04;
+  }
+
+  &.destroy-button {
+    background-color: #C41515;
+  }
+}
