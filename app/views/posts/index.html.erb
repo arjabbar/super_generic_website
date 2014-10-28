@@ -6,7 +6,7 @@
       <th>Title</th>
       <th>Content</th>
       <th>Published</th>
-      <th></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -17,9 +17,9 @@
         <td><%= post.body %></td>
         <td><%= post.published %></td>
         <td>
-        <%= link_to 'Show', post, class: 'button show-button' %>
-        <%= link_to 'Edit', edit_post_path(post), class: 'button edit-button' %>
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button destroy-button' %></td>
+        <td><%= link_to 'Show', post, class: 'button show-button' %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: 'button edit-button' %></td>
       </tr>
     <% end %>
   </tbody>
